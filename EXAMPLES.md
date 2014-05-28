@@ -1,4 +1,4 @@
-#Copy-RemoteFile Examples#
+##Copy-RemoteFile Examples##
 This file shows you some of the possibilities of Copy-RemoteFile.
 
 ####Create the required credential objects####
@@ -48,7 +48,7 @@ VERBOSE: Destination checksum: 97C5B62AB27C63765DDFBF34E868972B56CD68F76B994C95A
 PS C:\>
 
 
-Problem 1. Source file does not exist
+######Problem 1. Source file does not exist######
 =====================================
 PS C:\> Copy-RemoteFile \\SRC\C:\Tmp\Source.File-nx \\DST\C:\Tmp\Destination.File -Verbose -Check
 VERBOSE: Verifying SRC for source file: C:\Tmp\Source.File-nx
@@ -60,7 +60,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : FileNotFound,Copy-RemoteFile
 
 
-Problem 2. Destination file already exists
+######Problem 2. Destination file already exists######
 ==========================================
 PS C:\> Copy-RemoteFile \\SRC\C:\Tmp\Source.File \\DST\C:\Tmp\Destination.File -Verbose -Check
 VERBOSE: Verifying SRC for source file: C:\Tmp\Source.File
