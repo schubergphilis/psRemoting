@@ -49,7 +49,6 @@ PS C:\>
 
 
 ######Problem 1. Source file does not exist######
-=====================================
 PS C:\> Copy-RemoteFile \\SRC\C:\Tmp\Source.File-nx \\DST\C:\Tmp\Destination.File -Verbose -Check
 VERBOSE: Verifying SRC for source file: C:\Tmp\Source.File-nx
 Copy-RemoteFile : File C:\Tmp\Source.File-nx not found
@@ -61,7 +60,6 @@ At line:1 char:1
 
 
 ######Problem 2. Destination file already exists######
-==========================================
 PS C:\> Copy-RemoteFile \\SRC\C:\Tmp\Source.File \\DST\C:\Tmp\Destination.File -Verbose -Check
 VERBOSE: Verifying SRC for source file: C:\Tmp\Source.File
 VERBOSE: Verifying DST for destination: C:\Tmp\Destination.File
