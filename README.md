@@ -1,12 +1,8 @@
 #psRemoting*
-A collection of Powershell functions
-
-####To activate:####
-Beginning in Windows PowerShell 3.0, installed modules are automatically imported to the session when you use any commands or
-providers in the module. However, you can still use the Import-Module command to import the psRemoting module
+A collection of Powershell Remoting functions
 
 ####Description:####
-This is a collection (ahummm) of what I consider to be useful Powershell Remoting functions. The collection might grow over time with new functions.
+This is a collection (ahummm, only 1 sofar) of what I consider to be useful Powershell Remoting functions. The collection might grow over time with new functions.
 
 ####Function Overview####
 Following functions have been released;
@@ -24,7 +20,7 @@ Example:
 Beware: The syntax resembles an UNC path but is not quit the same.
 
 The computer names used when creating the session(s) must exactly match the names used with Copy-RemoteFile!
-See EXAMPLES and the Examples folder for additional examples and information
+See EXAMPLES.md for additional examples and information
 
 
 
