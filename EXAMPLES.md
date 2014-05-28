@@ -2,6 +2,7 @@
 This file shows you some of the possibilities of Copy-RemoteFile.
 
 ####Create the required credential objects####
+```
 PS C:\> $srcCred = Get-Credential 'SRC_Account'
 
 Windows PowerShell Credential Request
@@ -13,9 +14,11 @@ PS C:\> $dstCred = Get-Credential 'DST_Account'
 Windows PowerShell Credential Request
 Enter your credentials.
 Password for user 'DST_Account': ***********
+```
 
 
 ####Create the remote sessions using the created credential objects####
+```
 PS C:\> nsn -ComputerName SRC [-UseSSL] -Credential $srcCred
 
  Id Name            ComputerName    State         ConfigurationName     Availability
@@ -28,9 +31,10 @@ PS C:\> nsn -ComputerName DST [-UseSSL] -Credential $dstCred
  Id Name            ComputerName    State         ConfigurationName     Availability
  -- ----            ------------    -----         -----------------     ------------
   3 Session3        DST             Opened        Microsoft.PowerShell     Available
-
+```
 
 ####Copy the remote source file to the remote destination and verify it when ready####
+```
 PS C:\> Copy-RemoteFile \\SRC\C:\Tmp\Source.File \\DST\C:\Tmp\Destination.File -Verbose -Check
 VERBOSE: Verifying SRC for source file: C:\Tmp\Source.File
 VERBOSE: Verifying DST for destination: C:\Tmp\Destination.File
@@ -46,9 +50,11 @@ VERBOSE: Verifying checksum of copied file (can take some time...)
 VERBOSE: Source checksum     : 97C5B62AB27C63765DDFBF34E868972B56CD68F76B994C95AC6D02CF19070D03
 VERBOSE: Destination checksum: 97C5B62AB27C63765DDFBF34E868972B56CD68F76B994C95AC6D02CF19070D03
 PS C:\>
+```
 
 
 ######Problem 1. Source file does not exist######
+```
 PS C:\> Copy-RemoteFile \\SRC\C:\Tmp\Source.File-nx \\DST\C:\Tmp\Destination.File -Verbose -Check
 VERBOSE: Verifying SRC for source file: C:\Tmp\Source.File-nx
 Copy-RemoteFile : File C:\Tmp\Source.File-nx not found
@@ -57,9 +63,11 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : ObjectNotFound: (:) [Write-Error], FileNotFound
     + FullyQualifiedErrorId : FileNotFound,Copy-RemoteFile
+```
 
 
 ######Problem 2. Destination file already exists######
+```
 PS C:\> Copy-RemoteFile \\SRC\C:\Tmp\Source.File \\DST\C:\Tmp\Destination.File -Verbose -Check
 VERBOSE: Verifying SRC for source file: C:\Tmp\Source.File
 VERBOSE: Verifying DST for destination: C:\Tmp\Destination.File
@@ -69,3 +77,4 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : WriteError: (:) [Write-Error], FileAlreadyExists
     + FullyQualifiedErrorId : FileAlreadyExists,Copy-RemoteFile
+```
