@@ -13,10 +13,11 @@ created in advance! If no PSRemote session exists for the remote source or desti
 and the function will terminate. If both source and destination are local, a local Copy-Item command will be used.
 
 Example:
+```
   New-PSSession -Computer SRC .......
   New-PSSession -Computer DST .......
   Copy-RemoteFile \\SRC\C:\Tmp\Source.File \\DST\C:\Tmp\Destination.File [-Verbose] [-Check] [-Force]
-
+```
 Beware: The syntax resembles an UNC path but is not quit the same.
 
 The computer names used when creating the session(s) must exactly match the names used with Copy-RemoteFile!
